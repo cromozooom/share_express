@@ -1,0 +1,69 @@
+body
+  position: relative
+
+.backLink
+  border-radius: 0px 5px 0px 0px
+  span:before
+    border-right: 7px solid #fff
+    margin-right: 28px
+.nextLink
+  border-radius: 5px 0px 0px 0px
+  span:before
+    margin-left: 28px
+    border-left: 7px solid #fff
+.backLink, .nextLink
+  span:before
+    margin-top: 28px
+    display: block
+    content: ''
+    border-top: 4px solid transparent
+    border-bottom: 4px solid transparent
+
+.backLink, .nextLink
+  width: 4em
+  height: 4em
+  line-height: 4em
+  position: fixed
+  display: block
+  background: rgba(darken(#876969, 30%), 0.3)
+  z-index: 1
+  top: 100%
+  color: white
+
+.backLink
+  transform: translate(0, -100%)
+.nextLink
+  left: 100%
+  transform: translate(-100%, -100%)
+
+@include media-breakpoint-up(xs)
+  .backLink, .nextLink
+    top: 100%
+
+@include media-breakpoint-up(sm)
+  .backLink, .nextLink
+    top: 100%
+
+@include media-breakpoint-up(md)
+  .backLink, .nextLink
+    top: 50%
+  .backLink
+    border-radius: 0px 3px 3px 0px
+  .nextLink
+    border-radius: 3px 0px 0px 3px
+
+@include media-breakpoint-up(lg)
+  .backLink, .nextLink
+    top: 50%
+  .backLink
+    border-radius: 0px 3px 3px 0px
+  .nextLink
+    border-radius: 3px 0px 0px 3px
+
+@include media-breakpoint-up(xl)
+  .backLink, .nextLink
+    top: 50%
+  .backLink
+    border-radius: 0px 3px 3px 0px
+  .nextLink
+    border-radius: 3px 0px 0px 3px

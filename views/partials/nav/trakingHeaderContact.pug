@@ -1,0 +1,21 @@
+if pageTemplate == "home"
+  a.nav-link(href='/contact/home/header') Contact
+
+if pageTemplate == "artwork"
+  -var href = '/contact/header/' + art[1].idArtwork + "-" + art[1].titleArtwork
+  a.nav-link(href=href) Contact
+
+if pageTemplate == "about"
+  a.nav-link(href='/contact/about/header') Contact
+
+if pageTemplate == "paf"
+  a.nav-link(href='/contact/paf/header') Contact
+
+if pageTemplate == "gallery"
+  a.nav-link(href='/contact/gallery/header') Contact
+
+if pageTemplate == "contact"
+  a.nav-link(href='/contact/contact/header') Contact
+
+if pageTemplate == "thanks"
+  a.nav-link(href='/contact/thanks/header') Contact

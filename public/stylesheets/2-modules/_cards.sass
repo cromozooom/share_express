@@ -1,0 +1,66 @@
+.card-columns.gallery
+  @include media-breakpoint-only(md)
+    column-count: 2
+  @include media-breakpoint-only(lg)
+    column-count: 4
+  @include media-breakpoint-only(xl)
+    column-count: 6
+
+.card-columns.home
+  @include media-breakpoint-only(md)
+    column-count: 2
+  @include media-breakpoint-only(lg)
+    column-count: 4
+  @include media-breakpoint-only(xl)
+    column-count: 3
+
+.infoArtwork
+    padding: 1.25rem 0
+    h5, .details
+      margin: 0 1.25rem
+
+
+.card
+  border: none
+
+.gallery
+  padding: 1.5rem 1.5rem
+  .card
+    //padding-top: 1rem
+    margin-bottom: 1.5rem
+    position: relative
+    .imageLink
+      width: 100%
+      display: block
+      img
+        display: block
+        margin: 0 auto
+    .hover
+      background: lighten(#876969, 50%)
+      //border: 1px solid red
+
+      display: block
+      box-shadow: 0px 3px 8px -4px rgba(0,0,0,0.15)
+      transition: all .4s
+      &:hover
+        box-shadow: 0px 15px 30px -10px rgba(0,0,0,0.20)
+        //margin-top: -5px
+
+//.card-columns
+//  display: flex
+//  flex-wrap: wrap
+//  margin-left: 2rem
+//  margin-top: 2rem
+//.card
+//  flex-direction: row
+//  background: red
+//  width: calc(100% / 6)
+//  margin-right: 2rem
+//  margin-bottom: 2rem
+//  box-shadow: 0px 3px 8px -4px rgba(0,0,0,0.15)
+//  &:hover
+//    box-shadow: 0px 10px 8px -4px rgba(0,0,0,0.25)
+//    position: fixed
+//    transform: translateY(-4px)
+//  .infoArtwork
+//    background: lighten(#876969, 50%)

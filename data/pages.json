@@ -1,0 +1,40 @@
+{
+  "pages": [
+    {
+      "pageName": "gallery",
+      "title": "gallery of artist Calina Lefter",
+      "metaDescription": "my gallery page metadescriptiobn",
+      "keywords": "gallery key",
+      "thumbnailShareLink": "imgGallery",
+      "typePage": "galleryPage",
+      "htmlName": "gallery_calinalefter"
+    },
+    {
+      "pageName": "home",
+      "title": "homep page of artist Calina Lefter",
+      "metaDescription": "my home page metadescription",
+      "keywords": "home key",
+      "thumbnailShareLink": "imgHome",
+      "typePage": "homePage",
+      "htmlName": "gallery_calinalefter"
+    },
+    {
+      "pageName": "artwork",
+      "title": "artwork page of ",
+      "metaDescription": "my artwork page metadescription",
+      "keywords": "artwork key",
+      "thumbnailShareLink": "imgArtwork",
+      "typePage": "artworkPage",
+      "htmlName": "gallery_calinalefter"
+    },
+    {
+      "pageName": "contact",
+      "title": "contact page of artist Calina Lefter",
+      "metaDescription": "my contact page metadescription",
+      "keywords": "contact key",
+      "thumbnailShareLink": "imgContact",
+      "typePage": "contactPage",
+      "htmlName": "gallery_calinalefter"
+    }
+  ]
+}

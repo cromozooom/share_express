@@ -1,0 +1,48 @@
+extends layout
+//- block nav
+//- 	ul
+//- 		li: a(href="/") Home
+//- 		li: a(href="/gallery_calinalefter") Gallery
+//- 		li: a(href="/about_calinalefter") About
+//- 		li
+//- 			if pageTemplate == "home"
+//- 				a(href="/contact/home/header") Contact
+//-
+//- 			if pageTemplate == "artwork"
+//- 				a(href="/contact/artwork-header/" + art[1].link) Contact
+//-
+//- 			if pageTemplate == "about"
+//- 				a(href="/contact/about/header") Contact
+//-
+//- 			if pageTemplate == "gallery"
+//- 				a(href="/contact/gallery/header") Contact
+//-
+//- 			if pageTemplate == "contact"
+//- 				a(href="/contact/contact/header") Contact
+
+
+
+block content
+	if pageTemplate == "home"
+		include partials/home_random
+
+	if pageTemplate == "gallery"
+		include partials/gallery_artworks
+
+	if pageTemplate == "artwork"
+		include partials/artwork
+	
+	if pageTemplate == "about"
+		include partials/about
+	
+	if pageTemplate == "paf"
+		include partials/paf/paf
+			
+
+	if pageTemplate == "contact"
+		.container
+			//- p= "traking: " + contactTraking + " " + contactSource
+			include partials/contact
+	if pageTemplate == "thanks"
+		.container-fluid
+			include partials/thanks

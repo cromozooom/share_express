@@ -1,0 +1,15 @@
+.card.item.artwork.isotope-item.isotope-artwork(class= art.themeFilter + " " + art.available + " " + art.shapeFilter)
+  .hover
+    a.imageLink(href="./artwork/" + art.link)
+      img.card-img-top.img-fluid(src= art.imageGalleryThumbnail + "_1.jpg" alt= art.titlePage + " - " + art.yearArtwork + " - artwork by Calina Lefter" title= art.titlePage + " - " + art.yearArtwork itemprop="image")
+    .card-block.infoArtwork
+      h5= art.titleArtwork
+      hr
+      .details
+        small: span.float-xs-right!= art.sizeInch
+        a.pull-right(href="./artwork/" + art.link) Details
+    //-p= art.availableFilter
+    //-	p= art.price
+    //-
+      hr
+      small= art.themeFilter + " " + art.available + " " + art.sizeFilter + " " + art.shapeFilter

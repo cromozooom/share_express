@@ -1,0 +1,40 @@
+if development == true
+	- var linkSitegmt = "http://www.calinalefter.com"
+else
+	- var linkSitegmt = ""
+
+.container-fluid.gallery
+	.row
+		.col-xs-12
+			.container
+				include paf/paf
+		.col-xs-12
+			h2.text-xs-center.py-2 Hi, I'm Calina and this are some of my favorite works:
+	.container
+		.card-columns.home
+			for art in artworks
+				//-include artwork/card.pug
+				.card(class= art.themeFilter + " " + art.available + " " + art.shapeFilter)
+					.hover
+						a.imageLink(href="/gallery_calinalefter/artwork/" + art.link)
+							img.card-img-top.img-fluid.gtm-home-img(scheme = "imageGalery" price= "£" + art.price src= linkSitegmt + art.imageGalleryThumbnail + "_1.jpg" alt= art.titlePage + " - " + art.yearArtwork + " - artwork by Calina Lefter" title= art.titlePage + " - " + art.yearArtwork itemprop="image")
+						.card-block.infoArtwork
+							h5.gtm-home-img= art.titleArtwork
+							hr
+							.details
+								small: span.float-xs-right!= art.sizeInch
+								a.pull-right(href="/gallery_calinalefter/artwork/" + art.link) View
+	.row
+		.col-xs-12.text-xs-center
+			hr
+			a.btn.btn-outline-primary.btn-lg.mb-2(href="/gallery_calinalefter/all") view more ...
+//-.card-columns
+
+	for art in artworks
+		.card
+			a(href= "/artwork/" + art.link )
+				img.img-fluid(src= art.imageGalleryLarge + art.mainImageSufix + ".jpg" title= art.titleArtwork + ' - ' + art.yearArtwork + ' - ' + artworkBy alt=art.titleArtwork + ' - ' + art.yearArtwork + ' - ' + artworkBy)
+			.card-block
+				h3
+					= art.titleArtwork
+				small= art.sizeInch

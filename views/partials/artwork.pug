@@ -1,0 +1,142 @@
+if development == true
+	- var linkSitegmt = "http://www.calinalefter.com"
+else
+	- var linkSitegmt = ""
+
+//- links
+a.backLink.text-xs-center(href=art[0].link title=art[0].titleArtwork + " " + art[0].idArtwork )
+	span
+a.nextLink.text-xs-center(href=art[2].link title=art[2].titleArtwork + " " + art[2].idArtwork)
+	span
+.container-fluid.artworkCard(itemtype="http://schema.org/CreativeWork")
+	.row.artworkTitle
+		.col-xs-12.text-xs-center
+			h1.display-1.mt-1(itemprop="name")
+				= art[1].titleArtwork
+			p.mb-2: small.text-xs-right: i: nobr
+				= art[1].idArtwork.substring(0,4) + " " + config.artworkBy
+
+	.row.artworkData.flex-items-xs-top
+		col-xs-12.col-md-4.text-xs-center
+			a.thumbSimulation(href="#gallery")
+				//- imageGalleryLarge
+				//- imageGalleryMedium
+				//- imageGallerySmall
+				//- imageGalleryThumbnail
+
+				//- picture
+				//- 	source( srcset= art[1].imageGalleryLarge + art[1].mainImageSufix + ".jpg" media="(min-width: 1440px)" )
+				//- 	source( srcset= art[1].imageGalleryMedium + art[1].mainImageSufix + ".jpg" media="(min-width: 1000px)" )
+				//- 	source( srcset= art[1].imageGallerySmall + art[1].mainImageSufix + ".jpg" media="(min-width: 768px)" )
+
+				img.img-fluid.gtm-artwork(price= "£" + art[1].price src= linkSitegmt + art[1].imageGalleryThumbnail + art[1].mainImageSufix + ".jpg" alt= art[1].titlePage + " - " + art[1].yearArtwork + " - artwork by Calina Lefter" title= art[1].titleArtwork + ' - ' + art[1].yearArtwork + ' - ' + artworkBy)
+
+				//- img.img-fluid(src= art[1].imageGalleryLarge + art[1].mainImageSufix + ".jpg" title= art[1].titleArtwork + ' - ' + art[1].yearArtwork + ' - ' + artworkBy alt=art[1].titleArtwork + ' - ' + art[1].yearArtwork + ' - ' + artworkBy)
+		.col-xs-12.col-md-8
+			.row.pl-2.pr-2
+				.col-sm-12.col-md-6.push-md-6.price
+					if art[1].posibleToDo
+						include artwork/price
+					else
+						.small.note.text-left.mt-2
+							b Note:
+							br
+							span
+								i this artwork was sold at 
+						h2.mt-2(actualPrice= art[1].price)= "£ " + art[1].price 
+				.col-sm-12.col-md-6.pull-md-6.shortDescription
+					h2.display-3.mt-2 Details
+					ul.list-unstyled.mt-2(itemprop="description")
+						li(size)
+								strong Size&nbsp;
+								i= art[1].sizeInch
+						li(materials)
+							strong Materials:&nbsp;
+							i.materials-gtm= art[1].materials
+						li(tagStyle)
+							strong Tag &amp; Style:&nbsp;
+							i= art[1].tag
+						li(id)
+							strong ID:&nbsp;
+							i= art[1].idArtwork
+					.addthis_sharing_toolbox
+
+	if art[1].longDescription !== false
+		.row.artworkLongDescription
+			//-description centered
+			.col-xs-12.col-md-8.push-md-2.col-xl-6.push-xl-3
+				.Description.mt-3.pl-2.pr-2
+					b.hidden-xl-down: strong Description:&nbsp;
+					h5
+						= art[1].titleArtwork + " "
+						small: i= config.artworkBy
+					p!= art[1].longDescription
+
+.container-fluid
+	.row.gallery.py-3#gallery
+		.col-xs-12.text-xs-center
+			block Gallery
+				//-picture
+					source( srcset= art[1].imageGalleryLarge + art[1].mainImageSufix + ".jpg" media="(min-width: 1000px)" )
+					source(srcset=art[1].imageGalleryMedium + art[1].mainImageSufix + ".jpg" media="(min-width: 800px)" )
+					img.img-fluid(src= art[1].imageGalleryLarge + art[1].mainImageSufix + ".jpg" alt= art[1].titlePage + " - " + art[1].yearArtwork + " - artwork by Calina Lefter" title= art[1].titlePage + " - " + art[1].yearArtwork itemprop="image")
+
+				//-p= "gallery imgNr:" + art[1].imgNr
+				- for(var n = 1; n < art[1].imgNr+1 ; n++)
+					picture
+						source( srcset= art[1].imageGalleryLarge + "_" + n + ".jpg" media="(min-width: 1440px)" )
+						source(srcset=art[1].imageGalleryMedium + "_" + n + ".jpg" media="(min-width: 1000px)" )
+						source(srcset=art[1].imageGallerySmall + "_" + n + ".jpg" media="(min-width: 768px)" )
+
+						img.img-fluid.mt-2(src= art[1].imageGalleryMedium + "_" + n + ".jpg" alt= art[1].titlePage + " - " + art[1].yearArtwork + " - artwork by Calina Lefter" title= art[1].titlePage + " - " + art[1].yearArtwork itemprop="image")
+					//-img.img-fluid(src= art[1].imageGallery alt)
+		//- .col-xs-12
+			ul
+				li
+					strong meta
+					ul
+						li= "description: " +  art[1].metaDescription
+						li= "metaThumbnail: " + art[1].metaThumbnail
+						li= "metaKeywords: " + art[1].metaKeywords
+						li= "author: " + config.author
+						li= "copyRight: " + config.copyRight
+						li= "fb:app_id: " + art[1].idArtwork
+						li= "og:type: " + pageTemplate
+						li= "og:url: " + config.siteName + "/" + art[1].link
+						li= "og:title & title: " + art[1].titlePage
+
+
+				li= "link: " + art[1].link
+				li= "id: " + art[1].idArtwork
+				li
+					strong price
+					ul
+						li= "Etsy: " + art[1].linkStore
+						li= "price: " + art[1].price
+						li= "price Discounted: " + art[1].priceDiscounted
+						li= "cta Copy: " + art[1].ctaCopy
+
+
+				li= "titleLinkFriendly: " + art[1].titleLinkFriendly
+				li= "imageGallery: " + art[1].imageGallery
+				li= "style: " + art[1].style
+				li= "thema: " + art[1].thema
+				li= "color: " + art[1].color
+				li
+					strong size
+					ul
+						li= "width Inch: " + art[1].widthInch
+						li= "height Inch: " + art[1].heightInch
+						li= "thicknessInch: " + art[1].thicknessInch
+						li= "width: " + art[1].width
+						li= "height: " + art[1].height
+						li= "thickness: " + art[1].thickness
+						li= "size inch: " + art[1].sizeInch
+						li= "size cm: " + art[1].sizeCm
+
+				li
+					strong fileter
+					ul
+						li= "availableFilter: " + art[1].available
+						li= "themeFilter: " + art[1].themeFilter
+						li= "sizeFilter: " + art[1].sizeFilter

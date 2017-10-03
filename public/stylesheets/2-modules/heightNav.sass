@@ -1,0 +1,71 @@
+$xsNavHeight: 50px
+$mdNavHeight: 100px
+
+$screen-sm-min: 768px
+$screen-md-min: 992px
+$screen-lg-min: 1200px
+
+.navbar-default .navbar-toggle
+	border: 2px solid $brand-primary
+
+.navbar, .navbar-header
+	position: relative
+	border: 0
+	height: 80px
+	z-index: 100
+	//
+	//	border: 1px solid red
+#navbar-collapse-1
+	background: white
+	overflow: hidden
+
+.navbar-default
+	background: transparent
+	border: 0
+.navbar-nav, #navbar-collapse-1
+	ul
+		background: white
+		margin-bottom: 0 !important
+		margin-top: 0 !important
+		li
+			background: white
+
+		a
+			text-align: center
+			height: 80px
+			line-height: 80px
+			padding: 0 2em
+
+
+.navbar-brand
+	// uncomment this for center the logo on the top bar
+		// position: absolute
+		// left: 50%
+		// top: 0
+		// margin-left: -40px !important  // 50% of your logo width
+	display: block
+	border: 0px solid red
+	padding: 0
+	z-index: 1000
+
+
+// Extra small devices (phones, less than 768px) /
+// No media query since this is the default in Bootstrap /
+
+// Small devices (tablets, 768px and up) /
+@media (min-width: $screen-sm-min)
+	body
+		background: lighte( red, 30%)
+	.navbar-nav
+		a
+			text-align: center
+
+// Medium devices (desktops, 992px and up)
+@media (min-width: $screen-md-min)
+	body
+		background: lighte( blue, 30%)
+
+// Large devices (large desktops, 1200px and up)
+@media (min-width: $screen-lg-min)
+	body
+		background: lighte( green, 30%)

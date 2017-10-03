@@ -1,0 +1,63 @@
+- var fBpageLink 			= "https://www.facebook.com/alifantro"
+- var instagramLink 		= "https://instagram.com/calinalefter/"
+- var thumblrLink 			= "http://calinalefter.tumblr.com/"
+- var pinterestLink 		= "https://it.pinterest.com/calinalefter/"
+- var twitterLink 			= "https://twitter.com/moondiary"
+- var etsyLinkStore 		= "http://goo.gl/7I9BX4"
+- var mailListLink 			= "http://solopx.us2.list-manage1.com/subscribe?u=d209276dc2cb11e5f6fda4bdc&id=3405d11793"
+
+.container-fluid.footer
+	.container
+		.row.py-3
+			.col-sm-4.col-md-4.col-xs-12.text-center
+				h3.display-4: strong I am social
+				p
+					| These are some places where you can find me.
+				ul.social.list-inline
+					li.list-inline-item.text-center
+						a.fb.text-hide(href=fBpageLink)
+							include ../svg/facebook.svg
+							| Facebook page
+					li.list-inline-item.text-center
+						a.instagram.text-hide(href=instagramLink)
+							include ../svg/instagram.svg
+							| instagram
+					li.list-inline-item.text-center
+						a.thumblr.text-hide(href=thumblrLink)
+							include ../svg/thumblr.svg
+							|thumblr
+					li.list-inline-item.text-center
+						a.pinterest.text-hide(href=pinterestLink)
+							include ../svg/pinterest.svg
+							| pinterest
+					li.list-inline-item.text-center
+						a.twitter.text-hide(href=twitterLink)
+							include ../svg/twitter.svg
+							| twitter
+			.col-sm-4.col-md-4.col-xs-12.text-center
+				h3.display-4 Contact me
+				p Don"t hesitate to get in touch with me
+				p
+					| UK mobile:&nbsp;
+					a(href="tel:+447490843444")
+						| +44 749 08 43 444
+					br
+					//- |  &nbsp;&nbsp;|&nbsp;&nbsp;
+					| or&nbsp;
+					if pageTemplate == "home"
+						a.nav-link(href='/contact/home/footer') by e-mail
+					if pageTemplate == "artwork"
+						-var href = '/contact/footer/' + art[1].idArtwork + "-" + art[1].titleArtwork
+						a.nav-link(href=href) by e-mail
+					if pageTemplate == "about"
+						a.nav-link(href='/contact/about/footer') by e-mail
+					if pageTemplate == "gallery"
+						a.nav-link(href='/contact/gallery/footer') by e-mail
+					if pageTemplate == "contact"
+						a.nav-link(href='/contact/contact/footer') by e-mail
+
+			.col-sm-4.col-md-4.hidden-xs.text-center
+				h3.display-4 Newsletter
+				//- p Promotions and more details about my activity
+				p News and more details about my activity
+				a.btn_ghost.btn-lg_ghost.btn-brand_ghost(href=mailListLink) Join my mailing list

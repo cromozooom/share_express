@@ -1,0 +1,29 @@
+.container-fluid.gallery
+	include gallery_filter
+	.card-columns.sort-section.gallery
+		//- .px-2.py-2
+
+		for art in artworks
+			if filter === "all"
+				include artwork/card.pug
+			else if  art.availableFilter === filter || art.themeFilter === filter || art.sizeFilter === filter || art.shapeFilter === filter
+				include artwork/card.pug
+
+if filter != "all"
+	a.text-xs-center.view_all(href="/gallery_calinalefter/all") View all ...
+			//-a.btn.btn-outline-primary.btn-lg.mb-2(href="/gallery_calinalefter") view all ...
+
+//- block gridArtworks
+//- 	.container
+//- 		#posts.row.isotope
+//- 			for art in artworks
+//- 				.col-sm-4.item.artwork.isotope-item.isotope-artwork(class= art.themeFilter + " " + art.available + " " + art.sizeFilter + " " + art.shapeFilter)
+//- 					.item-wrap
+//- 						a(href="artwork/" + art.link)
+//- 							img.img-responsive(src= art.imageGalleryThumbnail + "_1.jpg" alt= art.titlePage + " - " + art.yearArtwork + " - artwork by Calina Lefter" title= art.titlePage + " - " + art.yearArtwork itemprop="image")
+//- 							img.img-responsive.text-center(src= art.imageGallery alt)
+//- 						.infoArtwork
+//- 							h5= art.titleArtwork
+//- 							span.pull-left!= art.sizeInch
+//- 							a.pull-right(href="artwork/" + art.link) view details
+//- 							.clearfix

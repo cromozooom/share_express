@@ -1,0 +1,30 @@
+nav.navbar.navbar-light.bg-faded.navbar-full
+	a.navbar-brand(href='/')
+		include logoCalina.svg
+	//- add this button
+		button.navbar-toggler.hidden-lg-up(type='button', data-toggle='collapse', data-target='#navbarResponsive', aria-controls='navbarResponsive', aria-expanded='false', aria-label='Toggle navigation')
+		#navbarResponsive.collapse.navbar-toggleable-md
+	ul.nav.navbar-nav.float-xs-right
+		if pageTemplate == "gallery"
+			li.nav-item.active
+				a.nav-link(href='/gallery-calinalefter/all') Gallery
+				//-span.sr-only (current)
+		else
+			li.nav-item
+				a.nav-link(href='/gallery-calinalefter/all') Gallery
+				//-span.sr-only (current)
+
+		if pageTemplate == "about"
+			li.nav-item.active
+				a.nav-link(href='/about-calinalefter') Bio
+		else
+			li.nav-item
+				a.nav-link(href='/about-calinalefter') Bio
+
+		if pageTemplate == "contact" || "thanks"
+			li.nav-item
+				include nav/trakingHeaderContact
+		
+		else
+			li.nav-item
+				include nav/trakingHeaderContact

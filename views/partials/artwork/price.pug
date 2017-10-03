@@ -1,0 +1,40 @@
+//- p= art[1].availableFilter
+//- p= art[1].linkStore
+if art[1].price
+  if art[1].discountVal != 0
+    - var actualPrice = art[1].price - (art[1].discountVal * art[1].price / 100)
+  else
+    - var actualPrice = art[1].price
+
+  //- if discout
+  if art[1].discountVal != 0
+    .actualPrice(actualPrice= actualPrice)
+      h2.price.display-3.mt-2
+        = "£" + actualPrice + ", "
+        small: del= "£" + art[1].price
+      span= "(discount: " + art[1].discountVal + "%)"
+    if art[1].availableFilter == true
+      a.btn.btn-primary.mt-2(href='/contact/cta/' + art[1].idArtwork + "-" + art[1].titleArtwork)
+        | BUY NOW
+    else
+      a.btn.btn-primary.mt-2(href=href='/contact/cta/' + art[1].idArtwork + "-" + art[1].titleArtwork)
+        | Order NOW
+  else
+    .actualPrice(actualPrice= actualPrice)
+      h2.price.display-3.mt-2: strong
+        = "£" + art[1].price
+    if art[1].availableFilter == true
+      a.btn.btn-primary.mt-2(href='/contact/cta/' + art[1].idArtwork + "-" + art[1].titleArtwork)
+        | BUY NOW
+
+    else
+      a.btn.btn-primary.mt-2(href='/contact/cta/' + art[1].idArtwork + "-" + art[1].titleArtwork)
+        | Order NOW
+  .small.note.text-left.mt-2
+    b Note:
+    p: span: i
+      | Ask for the shipping cost on the&nbsp;
+      a(href='/contact/noteCta/' + art[1].idArtwork + "-" + art[1].titleArtwork)
+        u contact page
+      br
+      | Signed also rear. Certification of Authenticity is attached

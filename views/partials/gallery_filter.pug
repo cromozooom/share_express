@@ -1,0 +1,81 @@
+.row.tag-container
+	.pl-2
+		.btn-group.mt-1.mr-2(role='group', aria-label='available')
+			a.btn.btn-secondary(href="/gallery_calinalefter/all") all
+			a.btn.btn-secondary(href="/gallery_calinalefter/available") available
+
+		.btn-group.mt-1.mr-2(role='group', aria-label='thema')
+			a.btn.btn-secondary(href="/gallery_calinalefter/landscapeSubject") landscape
+			a.btn.btn-secondary(href="/gallery_calinalefter/animals") animals
+			a.btn.btn-secondary(href="/gallery_calinalefter/abstract") abstract
+			a.btn.btn-secondary(href="/gallery_calinalefter/other") other
+
+		.btn-group.mt-1.mr-2(role='group', aria-label='size')
+			a.btn.btn-secondary(href="/gallery_calinalefter/small") S
+			a.btn.btn-secondary(href="/gallery_calinalefter/medium") M
+			a.btn.btn-secondary(href="/gallery_calinalefter/large") L
+			a.btn.btn-secondary(href="/gallery_calinalefter/xlarge") XL
+
+		.btn-group.mt-1.shapeFilter(role='group', aria-label='shape')
+			a.btn.btn-secondary(href="/gallery_calinalefter/landscape" title="gallery shape landscape")
+				include ./../../public/images/svg/horisontal.svg
+			a.btn.btn-secondary(href="/gallery_calinalefter/portrait" title="gallery shape portrait")
+				include ./../../public/images/svg/vertical.svg
+			a.btn.btn-secondary(href="/gallery_calinalefter/square" title="gallery shape square")
+				include ./../../public/images/svg/square.svg
+			a.btn.btn-secondary(href="/gallery_calinalefter/mixt" title="gallery shape other")
+				include ./../../public/images/svg/otherShape.svg
+
+
+
+
+
+
+
+
+//- .container-fluid.clearfix
+//- 	.row
+//- 		.col-xs-12.hidden-lg.hidden-md.hidden-sm
+//- 			.container_filter
+//- 				.filters.toggle.pull-right
+//- 					a.btn_ghost.btn-brand_ghost(data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample") filters
+//- 				.collapse#collapseExample
+//- 					//-.filters
+//- 					.filters.btn-group_ghost(role="group" aria-label="available")
+//- 						//- new
+//- 						//- button.btn_ghost.btn-brand_ghost(data-filter=".new") New
+//- 						//- available
+//- 						button.btn_ghost.btn-brand_ghost(data-filter="*") all
+//- 						button.btn_ghost.btn-brand_ghost(data-filter=".available") available
+//- 					.filters.btn-group_ghost(role="group" aria-label="thema")
+//- 						//- type
+//- 						button.btn_ghost.btn-brand_ghost(data-filter=".animals") animals
+//- 						button.btn_ghost.btn-brand_ghost(data-filter=".landscapeSubject") nature
+//- 						button.btn_ghost.btn-brand_ghost(data-filter=".other") abstract
+//-
+//- 					.filters.btn-group_ghost(role="group" aria-label="format")
+//- 						//- type
+//- 						button.btn_ghost.btn-brand_ghost(data-filter=".portret") portrait
+//- 						button.btn_ghost.btn-brand_ghost(data-filter=".landscape") landscape
+//- 						button.btn_ghost.btn-brand_ghost(data-filter=".square") square
+//- 						button.btn_ghost.btn-brand_ghost(data-filter=".mixt") Other
+//- 		.col-xs-12
+//- 			.container_filter.hidden-xs
+//- 				.filters.btn-group_ghost(role="group" aria-label="available")
+//- 					//- new
+//- 					//- button.btn_ghost.btn-brand_ghost(data-filter=".new") New
+//- 					//- available
+//- 					button.btn_ghost.btn-brand_ghost(data-filter="*") all
+//- 					button.btn_ghost.btn-brand_ghost(data-filter=".available") available
+//- 				.filters.btn-group_ghost(role="group" aria-label="thema")
+//- 					//- type
+//- 					button.btn_ghost.btn-brand_ghost(data-filter=".animals") animals
+//- 					button.btn_ghost.btn-brand_ghost(data-filter=".landscapeSubject") nature
+//- 					button.btn_ghost.btn-brand_ghost(data-filter=".other") abstract
+//-
+//- 				.filters.btn-group_ghost(role="group" aria-label="format")
+//- 					//- type
+//- 					button.btn_ghost.btn-brand_ghost(data-filter=".portret") portrait
+//- 					button.btn_ghost.btn-brand_ghost(data-filter=".landscape") landscape
+//- 					button.btn_ghost.btn-brand_ghost(data-filter=".square") square
+//- 					button.btn_ghost.btn-brand_ghost(data-filter=".mixt") Other

@@ -1,0 +1,41 @@
+.container.my-3
+	.row
+		.col-xs-12.col-md-7
+			if pageTemplate == "home"
+				p.spall
+					time(datetime="2017-06-17 08:00") news
+			h1.display-2 Calina Lefter at Parallax Art Fair
+			.lead Excited to announce that I will be exhibiting at the Parallax Art Fair 2017, in London.
+			br
+			p For the past five months I have been creating imaginary worlds of lyrical intensity which I would now like to share with you all. Come and enjoy more than 7000 works of art and design, showcased by 210 artists.
+			if pageTemplate == "home"
+				a.btn.btn-outline-primary(href="/calinalefter-at-parallax-art-fair") view more
+			if pageTemplate == "paf"
+				h3 Saturday & Sunday Tickets
+				p.spall|  Chelsea Town Hall - King's Road - Chelsea - SW3 5EE London - United Kingdom
+				p
+					| Get your <b>free ticket</b> to Europe's largest independent artist and designer fair: 
+				a.btn.btn-outline-primary(href="http://www.parallaxaf.co/tickets.html") Get Tickets
+					//- hr
+					//- a(href="http://parallaxaf.co/") Get Tickets 
+					//- | Parallax Art Fair, International Artists' Art Fair, London-New York-Miami 
+					//- a(href="http://parallaxaf.co") Visitors
+					//- |  Parallax Art Fair, International Artists' Art Fair., London-New York-Miami
+
+		.col-xs-12.col-md-4.offset-md-1
+			img.img-fluid(src="/images/parallax-art-fair/parallax-art-fair-calina-lefter.jpg" alt="parallax art fair - Clina-Lefter.jpg")
+	if pageTemplate == "paf"
+		hr
+		.row
+			.col-xs-12.col-md-8.offset-md-2
+				h2.my-2 Artist Statement
+				blockquote.blockquote
+					p Artist from the poetic and introspective vein, Calina Lefter takes inspiration from the real landscape view to create imaginary worlds of remarkable lyrical intensity, enriched by bright flashes and interesting polymateric contrasts. Her favourite subjects are natural landscapes of great breath captured in special moments of the day and witnesses of the progressive change of seasons, or still life, in home-made interiors of metaphysical imprint, where time seems so dilated to appear almost absent.
+					p Everything lies suspended between reality and dream, in an intimate and inner dimension that lives in memory and expectation. Observing her work carefully, she sees a material stratification, but also of slow, gradual, cured and methodical meaning, aimed at the ultimate achievement of a compositional harmony that can attract the spectator in a new and sensual context.
+					p It is difficult to resist the temptation to touch with the hand the tactile surfaces of her paintings: ripples of colour, dripping and a great variety of fabrics, now soft, now stiffer, now smooth and now perforated; these seem to wait for us to bring us back. I remember the feelings already experienced before.
+					p Dialogue between so many different materials is tight; a compositional game that reveals a lively and passionate experimentalism that leaves the free matter of expression through those properties that are their own. The artist seems to be orchestrating with tonal modulation mastery which, following each other, suggests a brilliant and well-calibrated rhythm made of long pauses and counterpoint. The large spots of colour, animated by innumerable colours, alternate with elements of their own specificity and careful detail, forcing the eye to follow an irregular path and to dwell on certain details and then, mentally, to rebuild their own; a vision that is not only the visual evidence suggested by the painter but a unique and personal vision.
+					p The titles of the works themselves, "Drops of Stars", "Rain Today", "Waiting for Dinner" and "Winter Night", reveal this desire to stop a particular moment of your life, crystallize their moods and transpose on the canvas a feeling that can be captured and shared by others. They also reveal conflicting feelings: a delicate and enveloping melancholy, drained in the warm and bright vision of so many dear and beloved natural landscapes, where to refresh the mind tired of the afflictions of everyday life. It is not a flight from reality in the narrow sense, but the search for a place of peace and tranquillity in which we lose and find again, and then look again with the many miracles that surround us. 
+					footer.blockquote-footer
+						| Emanuela Rindi in 
+						cite(title="Source Title") Artist Calina Lefter Statement
+		

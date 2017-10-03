@@ -1,0 +1,187 @@
+$primary-color: #333
+$success-color: #8ee37e
+
+//$fontprimary: 'Lora', serif
+//$fontSecondary: 'Trochut', cursive
+
+$screen-sm-min: 768px
+$screen-md-min: 992px
+$screen-lg-min: 1200px
+
+body
+	background: lighten($primary-color, 75%)
+	//font-family: $fontprimary
+
+// - filters alight
+//.container_filter
+//  width: auto
+//  float: left
+//  margin: 0 auto 0 50%
+//  display: block
+//  transform: translateX(-50%)
+
+.btn, .btn_ghost
+	transition: all 0.3s ease-in-out
+
+.infoArtwork
+	background: white
+	padding: .1em 1em 1em 1em
+	h2
+		//font-family: $fontSecondary
+
+
+.productCard
+	margin: 2em auto 4em auto
+	> .row
+		background: white
+		padding: 1em 0
+	h1
+		//font-family: $fontSecondary
+		font-size: 3em
+		color: lighten($primary-color, 60%)
+
+.standardInfo span, .description b
+	//font-family: $fontSecondary
+	font-weight: 700
+
+.gallery
+	.col-md-12
+		padding: 0
+	img
+		max-height: 100vh
+
+.id
+	color: lighten(black, 75%)
+	font-family: Arial
+.filters
+	float: left
+	margin-right: 1em
+
+.shipping
+	color: $success-color
+	//font-family: $fontSecondary
+	font-size: 2em
+	font-weight: 700
+
+.small.note span
+	color: lighten($primary-color, 50%)
+
+.img
+	img
+		margin: 0 auto
+
+.row.text-center, .gallery
+	img
+		margin: 0 auto
+
+.price
+	//font-size: 2em
+	span small
+		font-size: .5em
+	.old
+		border: 2px solid $success-color
+		color: lighten($primary-color, 60%)
+		font-weight: normal
+	.now.last
+		border-right: 2px solid $success-color
+	.now
+		color: $success-color
+		border: 2px solid $success-color
+		border-right: none
+	.ctaBuy
+		border: 2px solid $success-color
+		background: $success-color
+		border-top: none
+		font-size: .5em
+		a
+			color: lighten($success-color, 50%)
+			width: 100%
+			display: inline-block
+			padding-top: 1em
+			padding-bottom: 1em
+
+
+//// Isotope /////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////
+.item
+	border: none
+	h2
+		//font-size: 1.5em
+		font-weight: normal
+
+.item-wrap
+	padding-bottom: 1em
+
+// Isotope Transitions
+.isotope, .isotope .item
+	-webkit-transition-duration: 0.8s
+	-moz-transition-duration: 0.8s
+	-ms-transition-duration: 0.8s
+	-o-transition-duration: 0.8s
+	transition-duration: 0.8s
+
+.isotope
+	-webkit-transition-property: height, width
+	-moz-transition-property: height, width
+	-ms-transition-property: height, width
+	-o-transition-property: height, width
+	transition-property: height, width
+
+.isotope .item
+	-webkit-transition-property: -webkit-transform, opacity
+	-moz-transition-property:    -moz-transform, opacity
+	-ms-transition-property:     -ms-transform, opacity
+	-o-transition-property:         top, left, opacity
+	transition-property:         transform, opacity
+
+
+
+//// end Isotope /////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////
+
+.container_filter
+	width: auto
+	//padding: 0 15px
+	//transform: translateX(50%)
+	.filters
+		margin-bottom: 1em
+		float: left
+	.filters.toggle
+		margin-bottom: 1em
+		float: right
+		margin-right: 0
+
+/* mobile devices (tablets, 768px and down) */
+@media (max-width: $screen-sm-min)
+	// in home page isotope column is 45%
+	#posts .col-sm-4
+		width: 49%
+
+/* mobile devices (tablets, 500px and down) */
+@media (max-width: 500px)
+	// in home page isotope column is 45%
+	#posts .col-sm-4
+		width: 100%
+
+.sendButton.disabled
+	color: white
+/* Small devices (tablets, 768px and up) */
+//@media (min-width: $screen-sm-min)
+
+/* Medium devices (desktops, 992px and up) */
+//@media (min-width: $screen-md-min)
+
+/* Large devices (large desktops, 1200px and up) */
+//@media (min-width: $screen-lg-min)
+
+.img-responsive.center
+	margin: 0 auto;
+
+.price
+	.ctaBuy
+		font-size: 1.7rem
+	a.etsyPrice
+		font-size: 1.5rem
+		span
+			font-weight: bold
+			font-size: 1.7rem

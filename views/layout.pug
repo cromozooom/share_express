@@ -1,0 +1,175 @@
+- var development = true
+doctype html
+html(lang="en")
+	head
+		//- Google Tag Manager
+		.
+			<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+			new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+			j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+			'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+			})(window,document,'script','dataLayer','GTM-MS8225Q');</script>
+		
+		block meta
+			meta(charset="utf-8")
+			meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+			meta(http-equiv="x-ua-compatible" content="ie=edge")
+			meta(name="author", content= config.author )
+			meta(name="copyright", content= config.copyRight )
+			.
+				<script type="application/ld+json">{ "@context" : "http://schema.org", "@type" : "WebSite", "name" : "calinalefter.com", "alternateName": "Calina Lefter", "url" : "https://www.calinalefter.com/" }</script>
+				<script type="application/ld+json">{ "@context" : "http://schema.org", "@type" : "Organization", "url" : "https://www.calinalefter.com/", "logo": "https://calinalefter.com/images/svg/calinalefter-logo.svg", "brand" : "Calina Lefter", "sameAs" : [ "https://www.facebook.com/calina.lefter", "https://twitter.com/moondiary", "instagram.com/calinalefter/", "https://plus.google.com/+CalinaLefter", "https://pinterest.com/calinalefter/" ] }</script>
+		//- meta(name="viewport" content="width=device-width, initial-scale=1.0")
+
+
+		if pageTemplate == "home"
+			meta(name="description" content="Calina Lefter: Biography,Quotes,Paintings of Calina Lefter")
+			//- meta(name="keywords" content="art, artwork, natural landscapes, landscapes, colored, palette knife")
+			meta(name="thumbnail" content="https://calinalefter.com/gallery/thumbnail/share_home.jpg")
+			meta(property="fb:app_id" content="home")
+			meta(property="og:type" content="Home Page")
+			meta(property="og:url" content="https://calinalefter.com/")
+			meta(property="og:title" content="official site of Calina Lefter")
+			meta(property="og:image" content="https://calinalefter.com/gallery/thumbnail/share_home.jpg")
+			meta(property="og:description" content="Calina Lefter: Biography,Quotes,Paintings of Calina Lefter")
+			link(rel="image_src" href="https://calinalefter.com/gallery/thumbnail/share_home.jpg")
+			link(rel="shortcut icon" href="assets/ico/favicon.png")
+			//- sitemap
+			link(rel="sitemap" type="application/xml" title="Sitemap" href="https://calinalefter.com/sitemap.xml")
+			title official site of Calina Lefter
+
+		//- GALLERY page meta done
+		if pageTemplate == "gallery"
+			//- meta(name="keywords" content="art, artwork, natural landscapes, landscapes, colored, palette knife")
+			meta(name="thumbnail" content="https://calinalefter.com/gallery/thumbnail/share_home.jpg")
+			meta(property="fb:app_id" content="gallery")
+			meta(property="og:type" content="Gallery page")
+			meta(property="og:url" content="https://calinalefter.com/gallery_calinalefter")
+			meta(property="og:title" content="official site of Calina Lefter")
+			meta(property="og:image" content="https://calinalefter.com/gallery/thumbnail/share_home.jpg")
+			meta(property="og:description" content="Online exhibition of Calina Lefter")
+			link(rel="image_src" href="https://calinalefter.com/gallery/thumbnail/share_home.jpg")
+			link(rel="shortcut icon" href="assets/ico/favicon.png")
+			link(href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet" type="text/css")
+			link(href="https://fonts.googleapis.com/css?family=Fauna+One" rel="stylesheet" type="text/css")
+			title Online exhibition of Calina Lefter
+
+		//- ARTWORK page meta done
+		if pageTemplate == "artwork"
+			meta(name="description" content= art[1].metaDescription)
+			//- meta(name="keywords" content= art[1].metaKeywords)
+			meta(name="thumbnail" content= art[1].metaThumbnail)
+			meta(property="fb:app_id" content=art[1].idArtwork)
+			meta(property="og:type" content=pageTemplate)
+			meta(property="og:url" content=config.siteName + "/artwork/" + art[1].link)
+			meta(property="og:title" content= art[1].titlePage)
+			meta(property="og:image" content=art[1].imageGalleryLarge + art[1].mainImageSufix + ".jpg")
+			meta(property="og:description" content=art[1].metaDescription)
+			link(rel="image_src" href=art[1].imageGalleryLarge + art[1].mainImageSufix + ".jpg")
+			link(rel="shortcut icon" href="../../assets/ico/favicon.png")
+			title= art[1].titlePage
+
+		//- ABOUT page meta done
+		if pageTemplate == "about"
+			meta(name="description" content="Calina Lefter artist biography")
+			//- meta(name="keywords" content="art, artwork, biography Calina Lefter, artist, painter")
+			meta(name="thumbnail" content="https://calinalefter.com/gallery/thumbnail/share_home.jpg")
+			meta(property="fb:app_id" content="biography")
+			meta(property="og:type" content="biography")
+			meta(property="og:url" content="https://calinalefter.com/biography-of-calina-lefter.html")
+			meta(property="og:title" content="artist biography of Calina Lefter Artist")
+			meta(property="og:image" content="https://calinalefter.com/gallery/thumbnail/share_home.jpg")
+			meta(property="og:description" content="Calina Lefter artist biography")
+			link(rel="image_src" href="https://calinalefter.com/gallery/thumbnail/share_home.jpg")
+			link(rel="shortcut icon" href="assets/ico/favicon.png")
+			title artist biography of Calina Lefter Artist
+		
+		//- ABOUT page meta done
+		if pageTemplate == "paf"
+			meta(name="description" content="Calina Lefter at Parallax Art Fair")
+			//- meta(name="keywords" content="Parallax Art Fair")
+			meta(name="thumbnail" content="https://calinalefter.com/gallery/thumbnail/share_home.jpg")
+			meta(property="fb:app_id" content="Calina Lefter exhibition")
+			meta(property="og:type" content="Calina Lefter exhibition")
+			meta(property="og:url" content="https://calinalefter.com/biography-of-calina-lefter.html")
+			meta(property="og:title" content="artist exhibition of Calina Lefter Artist")
+			meta(property="og:image" content="https://calinalefter.com/gallery/thumbnail/share_home.jpg")
+			meta(property="og:description" content="Calina Lefter artist exhibition")
+			link(rel="image_src" href="https://calinalefter.com/gallery/thumbnail/share_home.jpg")
+			link(rel="shortcut icon" href="assets/ico/favicon.png")
+			title Calina Lefter at Parallax Art Fair
+
+		//- CONTACT page meta done
+		if pageTemplate == "contact"
+			meta(name="description" content="undefined")
+			//- meta(name="keywords" content="art, artwork, natural landscapes, landscapes, colored, palette knife")
+			meta(name="thumbnail" content="https://calinalefter.com/gallery/thumbnail/share_home.jpg")
+			meta(property="fb:app_id" content="Contact")
+			meta(property="og:type" content="Contact Page")
+			meta(property="og:url" content="https://calinalefter.com/contact")
+			meta(property="og:title" content="contact page of Painter Calina Lefter")
+			meta(property="og:image" content="https://calinalefter.com/gallery/thumbnail/share_home.jpg")
+			meta(property="og:description" content="undefined")
+			link(rel="image_src" href="https://calinalefter.com/gallery/thumbnail/share_home.jpg")
+			link(rel="shortcut icon" href="assets/ico/favicon.png")
+			title contact page of Painter Calina Lefter
+
+		link(rel='stylesheet', href='/stylesheets/app.css')
+	body
+		//- Google Tag Manager (noscript)
+		noscript
+			iframe(src="https://www.googletagmanager.com/ns.html?id=GTM-MS8225Q" height="0" width="0" style="display:none;visibility:hidden")
+		//- End Google Tag Manager (noscript)
+		if development == false
+			script.
+				(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+				(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+				m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+				})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+				ga('create', 'UA-12089108-1', 'auto');
+				ga('send', 'pageview');
+		include partials/navBar
+		block content
+		include partials/footerContent
+		block footerScript
+			//- jQuery
+			//- ??
+			//- script(src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.3.7/js/tether.min.js" integrity="sha384-XTs3FgkjiBgo8qjEjBk0tGmf3wPrWtA6coPfQDfFEY8AnYJwjalXCiosYRBIBZX8" crossorigin="anonymous")
+
+			//- bootstrap
+			script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" integrity="sha384-3ceskX3iaEnIogmQchP8opvBy3Mi7Ce34nWjpBIwVTHfGYWQS9jwHDVRnpKKHJg7" crossorigin="anonymous")
+			script(src="https://cdn.jsdelivr.net/picturefill/3.0.2/picturefill.min.js")
+			script(type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4fbdebdb6ae62d57")
+			//- script(src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js" integrity="sha384-BLiI7JTZm+JWlgKa0M0kGRpJbF2J8q+qreVrKBC47e3K6BW78kGLrCkeRX6I9RoK" crossorigin="anonymous")
+			//- BS4 JavaScript
+			//- script(src="/javascripts/bs4/alert.js")
+			//- script(src="/javascripts/bs4/button.js")
+			//- script(src="/javascripts/bs4/carousel.js")
+			//- script(src="/javascripts/bs4/collapse.js")
+			//- script(src="/javascripts/bs4/dropdown.js")
+			//- script(src="/javascripts/bs4/modal.js")
+			//- script(src="/javascripts/bs4/popover.js")
+			//- script(src="/javascripts/bs4/scrollspy.js")
+			//- script(src="/javascripts/bs4/tab.js")
+			//- script(src="/javascripts/bs4/tooltip.js")
+			//- script(src="/javascripts/bs4/util.js")
+
+			//- this is for isotope
+			if pageTemplate == "gallery"
+				//-script(src="https://imagesloaded.desandro.com/imagesloaded.pkgd.min.js")
+				//-script(src="/javascripts/jquery.isotope.min.js")
+				//-script(src="/javascripts/my.js")
+
+
+
+			//-script(src="/javascripts/bootstrap.min.js")
+
+			//- if addTyhis
+			//- Go to www.addthis.com/dashboard to customize your tools -->
+			//-script(type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4fbdebdb6ae62d57" async="async")
+
+			//- if contactPageScript
+			//- script(src="/javascripts/validator.min.js")
+
+			//- if pinterest
+			//- script(type="text/javascript" async defer src="//assets.pinterest.com/js/pinit.js")

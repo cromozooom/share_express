@@ -1,0 +1,22 @@
+.container.my-3
+	.row
+		.col-xs-12.col-sm-7
+			h1.display-1 Contact me
+			form(method='post', action='contact/send')
+				.form-group
+					label Name
+					input.form-control(type='text', name='name', placeholder='Enter Full Name')
+				.form-group
+					label Email
+					input.form-control(type='email', name='email', placeholder='Enter Your Email')
+				.form-group
+					label Message
+					textarea.form-control(name='message', placeholder='Enter mesage...')
+				.form-group.hidden-xl-down
+					input.form-control(type='text', name='traking', value= contactTraking + " - " + contactSource)
+					input.form-control(type='text', name='firm', value='not spam')
+
+				button.btn.btn-default(type='submit') Submint
+		.col-sm-5
+			.px-3
+				include address
